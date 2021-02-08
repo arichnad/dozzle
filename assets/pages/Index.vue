@@ -97,7 +97,7 @@ export default {
   computed: {
     ...mapState(["containers"]),
     mostRecentContainers() {
-      return [...this.containers].sort((a, b) => b.created - a.created);
+      return [...this.containers].sort((a, b) => b.stat.memoryUsage - a.stat.memoryUsage);
     },
     runningContainers() {
       return this.mostRecentContainers.filter((c) => c.state === "running");
