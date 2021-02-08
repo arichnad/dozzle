@@ -29,7 +29,7 @@
     </section>
 
     <section class="columns is-centered section">
-      <div class="column is-4">
+      <div class="column is-6">
         <div class="panel">
           <p class="panel-heading">Containers</p>
           <div class="panel-block">
@@ -60,7 +60,8 @@
             <span class="name">{{ item.name }}</span>
 
             <div class="subtitle is-7 status">
-              <past-time :date="new Date(item.created * 1000)"></past-time>
+              {{ item.stat.cpu }}% &bull;
+              {{ (item.stat.memoryUsage*1e-6).toFixed(0) }}mb
             </div>
           </router-link>
         </div>
